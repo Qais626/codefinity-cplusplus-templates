@@ -1,0 +1,16 @@
+#include <iostream>
+
+template<typename Type>
+void swap(Type &a, Type &b) {
+    Type temp = a;  // Store a in temp
+    a = b;          // Assign b to a
+    b = temp;       // Assign temp (original a) to b
+}
+
+int main()
+{
+    char digit = '3';
+    char letter = 'a';
+    swap<char>(digit, letter);
+    std::cout << "digit = " << digit << ", letter = " << letter << std::endl;
+}
