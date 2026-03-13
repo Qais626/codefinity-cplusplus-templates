@@ -1,0 +1,24 @@
+#include <iostream>
+
+// Template function with TWO non-type template parameters (actual values, not types)
+// Non-type parameters let you pass compile-time constant VALUES into a template
+// Here both parameters are of type 'int'
+template<int I1, int I2>
+int Sum() { 
+    return I1 + I2; // The two template values are added and returned
+}
+
+int main() 
+{
+    // 'constexpr' means the value is known at COMPILE TIME (not runtime)
+    // This is required because template arguments must be resolved before the program runs
+    // Regular 'int' variables are runtime values — the compiler rejects them as template args
+    const int options    = 25;
+    const int operations = 19;
+    
+
+
+    // Passes the VALUES 25 and 19 directly as template arguments (like types, but integers)
+    // The compiler generates a version of Sum() where I1=25 and I2=19
+    std::cout << Sum<options, operations>() << std::endl; // Prints 44
+}
