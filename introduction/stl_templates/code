@@ -1,0 +1,19 @@
+#include <iostream>
+#include <utility> // std::pair  — NOT <pair>, that header doesn't exist
+#include <array>   // std::array
+#include <vector>  // std::vector
+
+int main() 
+{
+    // std::pair holds exactly TWO values of (potentially) different types
+    // <int, std::string> matches the two arguments passed: 1 and "c<>definity"
+    std::pair<int, std::string> p(1, "c<>definity");
+
+    // std::array is a FIXED-SIZE array — size must be a compile-time constant
+    // <char, 5> because there are 5 char literals in the initializer list
+    std::array<char, 5> arr{ '1', '2', '3', '4', '5' };
+
+    // std::vector is a DYNAMIC array — only needs the element type, not the size
+    // <int> because the initializer list contains integer literals
+    std::vector<int> vec{ 1, 2, 3, 4, 5 };
+}
