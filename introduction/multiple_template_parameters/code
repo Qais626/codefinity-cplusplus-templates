@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+
+template <typename T1, typename T2>
+void printPair(T1 first, T2 second) {
+    std::cout << "First: " << first << ", Second: " << second << std::endl;
+}
+
+int main() {
+    printPair<int, std::string>(42, "hello");
+    printPair<char, float>('A', 3.14f);
+    return 0;
+}
