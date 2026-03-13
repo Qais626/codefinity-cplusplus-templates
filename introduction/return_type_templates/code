@@ -1,0 +1,16 @@
+#include <iostream>
+
+// 1 + 2 + 3 combined:
+template<typename T>
+T GetValue(T value)
+{
+    return value;
+}
+
+int main() 
+{
+    std::cout << GetValue<int>(42) << std::endl;
+    std::cout << GetValue<std::string>("c<>definity") << std::endl;
+    std::cout << GetValue<float>(21.55) << std::endl;
+    std::cout << GetValue<bool>(false) << std::endl;
+}
